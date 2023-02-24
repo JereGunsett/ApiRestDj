@@ -8,8 +8,6 @@ class Empleado(models.Model):
     apellido = models.CharField('Apellido', max_length=50)
     area = models.ForeignKey(Area, on_delete=models.CASCADE)
     
-
-
     class Meta:
         verbose_name = ("Empleado")
         verbose_name_plural = ("Empleados")

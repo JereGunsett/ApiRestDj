@@ -1,0 +1,40 @@
+{#{% extends 'base.html' %}#}
+{% block content %}
+  
+<h1>Busqueda de Empleados</h1>
+
+<form method="GET">
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" value="{{ request.GET.nombre }}">
+    <label for="apellido">Apellido:</label>
+    <input type="text" name="apellido" value="{{ request.GET.apellido }}">
+    <button type="submit">Buscar</button>
+</form>
+
+{% if empleados %}
+    <h2>Empleados encontrados:</h2>
+    <ul>
+    {% for empleado in empleados %}
+        <li>{{ empleado.nombre }} {{ empleado.apellido }} - {{ empleado.puesto }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No se encontraron empleados con ese nombre o apellido</p>
+{% endif %}
+
+{% comment %} Metodo utilizado en clases {% endcomment %}
+{% comment %} <form method="GET">
+    <input type="text" name="Apellidos" id="kword" name ="kword">
+
+    <input type="submit" value="Buscar">
+</form>
+
+<ul>
+    
+    {% for empleado in empleados %}
+        <li>{{empleado.apellido}}, {{empleado.nombre}}</li>
+    {% endfor %}
+        
+</ul> {% endcomment %}
+
+{% endblock content %}
