@@ -20,6 +20,7 @@ class EmpleadosListView(ListView):
     model = Empleado
     template_name = "empleados/lista.html"
     ordering = 'apellido'
+    paginate_by = 20
     context_object_name = 'empleados'
 
 

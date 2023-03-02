@@ -1,6 +1,18 @@
 {% extends 'base.html' %}
+{% load static %}
+
 
 {% block content %}
+
+<h1>Detalle del Empleado</h1>
+
+{% if detalle.avatar %}
+    <img src="{{detalle.avatar.url}}" alt="Avatar de {{empleado.nombre}} {{empleado.apellido}}">
+{% else %}
+    <img src="{% static 'img/avatar.webp' %}" alt="Imagen por defecto">
+{% endif %}
+    
+<h2>Datos:</h2>
 <ul>
     <li>Apellidos: {{detalle.apellido}}</li>
     <li>Nombres: {{detalle.nombre}}</li>

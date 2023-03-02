@@ -8,5 +8,6 @@ class EmpleadoForm(forms.ModelForm):
         fields = (
             "apellido",
             "nombre",
-            "area"
+            "area",
+            "avatar",
         )
